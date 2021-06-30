@@ -17,14 +17,16 @@ void loop()
 {
   int value = analogRead(in);
   Serial.println(value);
-  if (value > maxValue) // this whole bit right here
-  {                     // keeps track of the
-    maxValue = value;   // minimum and maximum values
-  }                     // recorded, and adjusts the map accordingly
-  else if (value < minValue)
-  {
-    minValue = value;
-  }
+
+  if (value > maxValue)      // this whole bit right here
+  {                          // keeps track of the
+    maxValue = value;        // minimum and maximum values
+  }                          // recorded, and adjusts the map accordingly
+  else if (value < minValue) // so that I can be lazy
+  {                          // and dont have to record
+    minValue = value;        // the min and max values myself.
+  }                          // :p
+
   uint32_t returnValue = map(value, minValue, maxValue, 255, 0); // maps min and max values to 255, 0; inversed b/c inverse effects
   analogWrite(out, returnValue);
 }
