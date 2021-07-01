@@ -3,8 +3,8 @@ SYSTEM_THREAD(ENABLED);
 
 const uint16_t in = A5;  // input pin
 const uint16_t out = D6; // output pin
-int minValue = 4096;     // maximum value recorded
-int maxValue = 0;        // minimum value recorded
+int minValue = 4096;     // minimum value recorded
+int maxValue = 0;        // maximum value recorded
 
 void setup()
 {
